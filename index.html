@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Happey Eid</title>
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+            * {
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+            body {
+                text-transform: capitalize;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-image: url('./eid.webp'), url('eid.JPG');
+                background-position: center top, center center;
+                background-repeat: no-repeat, repeat;
+                background-size: cover, contain;
+                direction: rtl;
+                font-family: 'Cairo', sans-serif;
+            }
+            .box::before {
+                content: '';
+                background-image: url('eid.gif');
+                background-position: center center;
+                background-repeat: repeat;
+                background-size: contain;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: -1;
+                top: 0;
+            }
+
+            .box {
+                box-shadow: 0 0 5px 0 #88888809;
+                padding: 50px;
+                background-color: #fff;
+                border-radius: 8px;
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                font-family: 'Cairo', sans-serif;
+                margin: 20px;
+            }
+            .box-content {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                font-family: 'Cairo', sans-serif;
+                justify-content: center;
+            }
+            @media (max-width: 767px) {
+                .box-content {
+                    flex-direction: column;
+                }
+            }
+            input,
+            input:focus {
+                padding: 10px 15px;
+                font-family: 'Cairo', sans-serif;
+                text-align: right;
+                border: 1px solid rgb(207 6 10);
+                outline: none;
+            }
+            input::placeholder {
+                color: rgb(207 6 10);
+            }
+            button {
+                padding: 10px 25px;
+                background-color: rgb(207 6 10);
+                color: #fff;
+                border: none;
+                outline: none;
+                font-weight: bold;
+                border-radius: 4px;
+                font-family: 'Cairo', sans-serif;
+                margin: 0 10px;
+                cursor: pointer;
+                transition: 0.4s;
+                border: 1px solid rgb(207 6 10);
+            }
+            button:hover {
+                background-color: #fff;
+                color: rgb(207 6 10);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <div class="box-content">
+                <input type="text" placeholder="أكتب اسمك هنا" id="inpName" />
+                <button id="btn">أضغط هنا</button>
+            </div>
+            <bdi><h1 id="msg"></h1></bdi>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
